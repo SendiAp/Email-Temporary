@@ -33,6 +33,10 @@
             "description": "channel username tanpa @",
             "required": true
         },
+        "GROUPS": {
+            "description": "groups username tanpa @",
+            "required": true
+        },
         "OWNER": {
             "description": "id pemilik mendapatkannya dari @MissRose_bot send /id cmd",
             "required": true
