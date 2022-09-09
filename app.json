@@ -1,0 +1,52 @@
+{
+    "name": "Email-Temporary",
+    "description": "Fake Mail gen bot",
+    "repository": "https://github.com/SendiAp",
+    "logo":"https://telegra.ph/file/f0537f89c1ef9ccc33ec9.jpg",
+    "keywords": [
+        "Bot",
+        "Telegram ",
+        "Pyrogram "
+    ],
+    "env": {
+        "API_ID": {
+            "description": "Get from my.telegram.org/apps",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Get from my.telegram.org/apps",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "get from @BotFather",
+            "required": true
+        },
+        "DATABASE": {
+            "description": "get from mongo",
+            "required": true
+        },
+        "CHANNEL_ID": {
+            "description": "pesan saluran frwd ke @username_to_id_bot dan balas dengan id cmd",
+            "required": true
+        },
+        "CHANNEL": {
+            "description": "channel username tanpa @",
+            "required": true
+        },
+        "OWNER": {
+            "description": "id pemilik mendapatkannya dari @MissRose_bot send /id cmd",
+            "required": true
+        }
+    },
+    "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
