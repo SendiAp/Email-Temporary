@@ -47,8 +47,8 @@ On this bot you can create a temporary (disposable) email in a second, that self
 Send /new to set-up your MailBox! """
 start_button = InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton("🔰Update Mail Box🔰", callback_data = f"tentang"),
-                    InlineKeyboardButton("Channel 2", url="t.me/smprojectID")
+                    InlineKeyboardButton("🌟 Premium", callback_data = f"Premium"),
+                    InlineKeyboardButton("🤖 Project", url="https://t.me/BottyCu/49")
             ]])
 fsub_text = """
 **❗Peringatan**
@@ -57,7 +57,6 @@ Anda melihat pesan ini karena Anda tidak berlangganan saluran:
 @Bottycu
 
 Penting bagi Anda untuk mengetahui pembaruan terkini dan mengetahui fungsi baru."""
-
 
 async def get_user(message):
     ok = True
@@ -128,13 +127,15 @@ async def gen_keyboard(mails, email, domain):
     i_kbd.add(*data)
     return i_kbd
  
-@app.on_callback_query(filters.regex("tentang"))
+#********************************************************************************
+
+@app.on_callback_query(filters.regex("Premium"))
 async def tentang_box(_, query : CallbackQuery):
     Data = query.data
     await query.message.edit(f""" 
 **📬Done,Your Email Address Created!**
 **Powered by** : @szteambots""",
-reply_markup = start_button
+reply_markup = create
 )   
 
 #********************************************************************************
