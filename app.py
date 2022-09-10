@@ -226,7 +226,7 @@ async def fakemailgen(_, message: Message):
 #Owner commands pannel here
 #user_count, broadcast_tool
 
-@app.on_message(filters.command("stats") & filters.user(OWNER))
+@app.on_message(filters.command("stats"))
 async def stats(_, message: Message):
     name = message.from_user.id
     served_chats = len(await get_served_chats())
