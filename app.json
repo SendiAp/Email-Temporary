@@ -29,6 +29,14 @@
             "description": "pesan saluran frwd ke @username_to_id_bot dan balas dengan id cmd",
             "required": true
         },
+        "CHANNEL1": {
+            "description": "nama1 pengguna saluran tanpa @",
+            "required": true
+        },
+        "CHANNEL2": {
+            "description": "nama2 pengguna saluran tanpa @",
+            "required": true
+        },
         "OWNER": {
             "description": "id pemilik mendapatkannya dari @MissRose_bot send /id cmd",
             "required": true
