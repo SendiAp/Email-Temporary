@@ -47,7 +47,7 @@ On this bot you can create a temporary (disposable) email in a second, that self
 Send /new to set-up your MailBox! """
 start_button = InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton("🔰Update Mail Box🔰", callback_data = f"newemail"),
+                    InlineKeyboardButton("🔰Update Mail Box🔰", callback_data = f"tentang"),
                     InlineKeyboardButton("Channel 2", url="t.me/smprojectID")
             ]])
 fsub_text = """
@@ -91,8 +91,8 @@ create = InlineKeyboardMarkup(
             [[InlineKeyboardButton("SM•Project", url="https://t.me/smprojectID")]])
 
 #********************************************************************************
-@app.on_callback_query(filters.regex("newemail"))
-async def new_email(_, query : CallbackQuery):
+@app.on_message(filters.command("new"))
+async def fakemailgen(_, message: Message):
     name = message.from_user.id
     m =  await app.send_message(name,text=f"Please Wait...",reply_markup = create)
     rp = RandomWord(max_word_size=8, include_digits=True)
@@ -128,6 +128,18 @@ async def gen_keyboard(mails, email, domain):
     i_kbd.add(*data)
     return i_kbd
  
+@app.on_callback_query(filters.regex("tentang"))
+async def tentang_box(_, query : CallbackQuery):
+    Data = query.data
+    callback_request = Data.split(None, 1)[1]
+    await query.message.edit(f""" 
+**📬Done,Your Email Address Created!**
+📧 **Email** : `{smail}`
+📨 **Mail BOX** : ✅
+**Powered by** : @szteambots""",
+reply_markup = start_button
+)   
+
 #********************************************************************************
 
 @app.on_callback_query(filters.regex("mailbox"))
