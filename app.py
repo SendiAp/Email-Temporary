@@ -131,7 +131,6 @@ async def gen_keyboard(mails, email, domain):
 @app.on_callback_query(filters.regex("tentang"))
 async def tentang_box(_, query : CallbackQuery):
     Data = query.data
-    callback_request = Data.split(None, 1)[1]
     await query.message.edit(f""" 
 **📬Done,Your Email Address Created!**
 📧 **Email** : `{smail}`
