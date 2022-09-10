@@ -47,7 +47,7 @@ On this bot you can create a temporary (disposable) email in a second, that self
 Send /new to set-up your MailBox! """
 start_button = InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton("🔰Update Mail Box🔰", callback_data = f"mailbox |{email}|{domain}"),
+                    InlineKeyboardButton("🔰Update Mail Box🔰", callback_data = f"mailbox"),
                     InlineKeyboardButton("Channel 2", url="t.me/smprojectID")
             ]])
 fsub_text = """
