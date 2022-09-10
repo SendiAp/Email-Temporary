@@ -105,11 +105,11 @@ async def fakemailgen(_, message: Message):
     mes = await app.send_message(
     name, 
     text = f"""
-**📬Done,Your Email Address Created!**
+**Sukses Membuat Email!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
-**Powered by** : @szteambots """,
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔰Update Mail Box🔰", callback_data = f"mailbox |{email}|{domain}")]]))
+**Powered by** : @smprojectID """,
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔂 Refresh Kotak Masuk 🔂", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
     await pi.delete()
@@ -125,7 +125,7 @@ async def gen_keyboard(mails, email, domain):
         )
         num += 1
     data.append(
-        InlineKeyboardButton(f"🔰Update Mail Box🔰", f"mailbox |{email}|{domain}")
+        InlineKeyboardButton(f"🔂 Refresh Kotak Masuk 🔂", f"mailbox |{email}|{domain}")
     )
     i_kbd.add(*data)
     return i_kbd
@@ -159,11 +159,11 @@ async def mail_box(_, query : CallbackQuery):
 **📬Done,Your Email Address Created!**
 📧 **Email** : `{smail}`
 📨 **Mail BOX** : ✅
-**Powered by** : @szteambots""",
+**Powered by** : @smprojectID""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
-            await query.answer("🤷‍♂️ No New Mails found! 🤷‍♂️")
+            await query.answer("🤷‍♂️ Tidak ada Surat Baru ditemukan! 🤷‍♂️")
 
 #********************************************************************************
 
