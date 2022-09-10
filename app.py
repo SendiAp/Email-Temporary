@@ -35,6 +35,8 @@ app = Client(
 )
 
 CHANNEL_ID = int(os.environ['CHANNEL_ID'])
+CHANNEL1 = os.environ['CHANNEL1']
+CHANNEL2 = os.environ['CHANNEL2']
 OWNER = int(os.environ['OWNER'])
 
 start_text = """
@@ -45,8 +47,8 @@ On this bot you can create a temporary (disposable) email in a second, that self
 Send /new to set-up your MailBox! """
 start_button = InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton("Channel 1", url="t.me/smprojectID"),
-                    InlineKeyboardButton("Channel 2", url="t.me/BottyCu")
+                    InlineKeyboardButton("Channel 1", url="t.me/CHANNEL1"),
+                    InlineKeyboardButton("Channel 2", url="t.me/CHANNEL2")
             ]])
 fsub_text = """
 **❗Peringatan**
