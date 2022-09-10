@@ -47,8 +47,8 @@ On this bot you can create a temporary (disposable) email in a second, that self
 Send /new to set-up your MailBox! """
 start_button = InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton("Channel 1", url="t.me/{CHANNEL1}"),
-                    InlineKeyboardButton("Channel 2", url="t.me/{CHANNEL2}")
+                    InlineKeyboardButton("Channel 1", url="t.me/BottyCu"),
+                    InlineKeyboardButton("Channel 2", url="t.me/smprojectID")
             ]])
 fsub_text = """
 **❗Peringatan**
