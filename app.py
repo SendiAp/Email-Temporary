@@ -133,8 +133,6 @@ async def tentang_box(_, query : CallbackQuery):
     Data = query.data
     await query.message.edit(f""" 
 **📬Done,Your Email Address Created!**
-📧 **Email** : `{smail}`
-📨 **Mail BOX** : ✅
 **Powered by** : @szteambots""",
 reply_markup = start_button
 )   
