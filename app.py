@@ -40,11 +40,14 @@ CHANNEL2 = os.environ['CHANNEL2']
 OWNER = int(os.environ['OWNER'])
 
 start_text = """
-Hello {} , Welcome To The Temp| Fake Mail Bot
+**Hello {}!**
+🔐 **Selamat datang** di Temp| Bot Surat Palsu.
 
-On this bot you can create a temporary (disposable) email in a second, that self-destructs after some time. Stay safe, avoid spam - take care of your anonymity. You can select from many domains and create own nick. Smart, huh?
+🤖 **Pada bot ini Anda dapat membuat email sementara** (sekali pakai) dalam sedetik, penghancuran diri setelah beberapa waktu.
 
-Send /new to set-up your MailBox! """
+💁 **Tetap aman, hindari spam - jaga anonimitas Anda.** Anda dapat memilih dari banyak domain dan membuat Nick sendiri. Pintar, ya?
+
+🔂 Kirim /new untuk mengatur Kotak Surat Anda! """
 start_button = InlineKeyboardMarkup(
             [[
                     InlineKeyboardButton("🌟 Premium", callback_data = f"Premium"),
