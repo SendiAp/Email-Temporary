@@ -50,7 +50,7 @@ start_text = """
 🔂 Kirim /new untuk mengatur Kotak Surat Anda! """
 start_button = InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton("🌟 Premium", callback_data = f"Premium"),
+                    InlineKeyboardButton("💁 About", callback_data = f"Premium"),
                     InlineKeyboardButton("🤖 Project", url="https://t.me/BottyCu/49")
             ]])
 fsub_text = """
@@ -105,7 +105,7 @@ async def fakemailgen(_, message: Message):
     mes = await app.send_message(
     name, 
     text = f"""
-**Sukses Membuat Email!**
+**📬Selesai, Alamat Email Anda Dibuat!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
 **Powered by** : @smprojectID """,
@@ -136,8 +136,14 @@ async def gen_keyboard(mails, email, domain):
 async def tentang_box(_, query : CallbackQuery):
     Data = query.data
     await query.message.edit(f""" 
-**📬Done,Your Email Address Created!**
-**Powered by** : @szteambots""",
+🔐 **Bot ini dapat membantu anda** untuk mendapatkan email sementara.
+
+• **Creator:** @pikyus1
+• **Language:** Python
+• **Support:** @BottyCu
+
+👨‍💻 **Develoved by** @smprojectID
+""",
 reply_markup = create
 )   
 
@@ -150,13 +156,13 @@ async def mail_box(_, query : CallbackQuery):
     m, email , domain = callback_request.split("|")
     mails = requests.get(f'{API2}{email}&domain={domain}').json()
     if mails == []:
-            await query.answer("🤷‍♂️ No Mails found! 🤷‍♂️")
+            await query.answer("🤷‍♂️ Tidak ada Surat yang ditemukan! 🤷‍♂️")
     else:
         try:
             smail = f"{email}@{domain}"
             mbutton = await gen_keyboard(mails,email, domain)
             await query.message.edit(f""" 
-**📬Done,Your Email Address Created!**
+**📬Selesai, Alamat Email Anda Dibuat!**
 📧 **Email** : `{smail}`
 📨 **Mail BOX** : ✅
 **Powered by** : @smprojectID""",
@@ -196,7 +202,8 @@ async def mail_box(_, query : CallbackQuery):
         await query.message.edit(f""" 
 **From:** `{froms}`
 **Subject:** `{subject}`   
-**Date**: `{date}`
+**Date:** `{date}`
+=====================================
 {text}
 """,
 reply_markup = mbutton
